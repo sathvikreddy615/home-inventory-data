@@ -1,4 +1,8 @@
+// Declare empty object for data to be later passed through
+
 const HomeInventoryDB = {};
+
+// Passing empty object properites into main object
 
 HomeInventoryDB.furniture = [];
 HomeInventoryDB.crafts = [];
@@ -10,7 +14,7 @@ const vintageInkwell = {
     name: "Vintage Ink Well",
     location: "Writing desk",
     description: "I enjoy this inkwell because it belonged to my grandfather and holds enough ink to survive weeks of writing."
-  }
+}
 
 const painting = {
     name: "Beatles Painting",
@@ -83,6 +87,8 @@ HomeInventoryDB.electronics.push(videoGame);
 HomeInventoryDB.electronics.push(microwave);
 HomeInventoryDB.electronics.push(speakers);
 
+// Local Storage - Make Data Permanent
+
 const saveDB = (dbObject, localStorageKey) => {
     const stringifiedDB = JSON.stringify(dbObject);
     localStorage.setItem(localStorageKey, stringifiedDB);
@@ -95,4 +101,4 @@ const loadDB = localStorageKey => {
     return JSON.parse(dbString);
 }
 
-console.log(loadDB("HomeInventory"));
+loadDB("HomeInventory");
